@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lab 10: API Calls in JavaScript</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style.css"/>
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
-  <section class="header">
-    <h1>Lab 10: API Calls in JavaScript</h1>
-  </section>
+  <div class="container">
+    <header class="header">
+      <h1>Lab 10: API Calls in JavaScript</h1>
+    </header>
 
-  <section class="sectionAPI" id="fetchSection">
-    <h3>Fetch Data using Fetch API</h3>
-    <button type="button" class="buttonsFetch" id="fetchDataFetchBtn">
-      Fetch Data with Fetch
-    </button>
-    <div id="dataDisplayFetch"></div>
-  </section>
+    <section class="sectionAPI" id="controlsSection">
+      <h3>API Fetch Operations</h3>
+      <button id="fetchDataFetchBtn" class="buttonsFetch">Fetch Data with Fetch</button>
+      <button id="fetchDataXHRBtn" class="buttonsFetch">Fetch Data with XHR</button>
+    </section>
 
-  <section class="sectionAPI" id="xhrSection">
-    <h3>Fetch Data using XMLHttpRequest</h3>
-    <button type="button" class="buttonsFetch" id="fetchDataXHRBtn">
-      Fetch Data with XHR
-    </button>
-    <div id="dataDisplayXHR"></div>
-  </section>
+    <section class="sectionAPI" id="resultSection">
+      <h3>Result</h3>
+      <div id="dataDisplay"></div>
+    </section>
 
-  <section class="sectionAPI" id="formSection">
-    <h3>Input Form for POST/PUT Requests</h3>
-    <form id="inputForm">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required>
-      
-      <label for="body">Body:</label>
-      <textarea id="body" name="body" maxlength="500" required></textarea>
-      
-      <label for="postId">Post ID (for update):</label>
-      <input type="number" id="postId" name="postId">
-      
-      <button type="submit">Submit</button>
-    </form>
-    <div id="formResponse"></div>
-  </section>
+    <section class="sectionAPI" id="formSection">
+      <h3>Input Form for POST / PUT</h3>
+      <div class="modeToggle">
+        <label><input type="radio" name="mode" value="create" checked> New Post</label>
+        <label><input type="radio" name="mode" value="edit"> Edit Post</label>
+      </div>
+
+      <form id="inputForm">
+        <input 
+          id="postId" 
+          name="postId" 
+          type="number" 
+          placeholder="Post ID (only for edit)" 
+        />
+        <input 
+          id="title" 
+          name="title" 
+          type="text" 
+          placeholder="Title" 
+          required 
+        />
+        <textarea 
+          id="body" 
+          name="body" 
+          placeholder="Body" 
+          maxlength="500" 
+          required
+        ></textarea>
+        <button id="submitBtn" type="submit">Submit</button>
+      </form>
+      <div id="formResponse"></div>
+    </section>
+  </div>
 </body>
 </html>
